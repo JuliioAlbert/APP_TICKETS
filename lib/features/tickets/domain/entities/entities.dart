@@ -1,0 +1,11 @@
+export './ticket.dart';
+export './usuario.dart';
+export './dev.dart';
+export './status.dart';
+export './area.dart';
+export './servicio.dart';
+export './tipo_servicio.dart';
+export './tipo_usuario.dart';
+export './pla.dart';
+export './emp_ut.dart';
+export './admin_ut.dart';
