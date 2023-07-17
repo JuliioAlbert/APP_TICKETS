@@ -5,6 +5,5 @@ import 'package:gen_soportes/features/tickets/infrastructure/repositories/ticket
 
 final ticketRepositoryProvider = Provider<TicketsRepository>((ref) {
   final ticketRepository = TicketRepositoryImp(TicketDataSourceImp());
-
   return ticketRepository;
 });

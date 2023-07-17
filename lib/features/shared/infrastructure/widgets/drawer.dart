@@ -35,6 +35,13 @@ class _SideMenuState extends ConsumerState<SideMenu> {
       },
       backgroundColor: colors.surface,
       children: [
+        Container(
+          margin: const EdgeInsets.all(15.0),
+          child: const Image(
+            image: AssetImage("assets/images/nieto.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
         Padding(
           padding: EdgeInsets.fromLTRB(28, hasNotch ? 0 : 20, 16, 10),
           child: const Text("Tickets"),
@@ -49,15 +56,24 @@ class _SideMenuState extends ConsumerState<SideMenu> {
           padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
           child: Divider(),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: CustomFilledButton(
-            onPressed: () {
-              ref.read(authProvider.notifier).logout();
-            },
-            text: 'Cerrar sesión',
-          ),
-        ),
+        SizedBox(
+            height: MediaQuery.of(context).size.height - 420,
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Container(),
+                ),
+                const Divider(
+                  thickness: 1.0,
+                ),
+                CustomFilledButton(
+                  onPressed: () {
+                    ref.read(authProvider.notifier).logout();
+                  },
+                  text: 'Cerrar sesión',
+                ),
+              ],
+            )),
       ],
     );
   }

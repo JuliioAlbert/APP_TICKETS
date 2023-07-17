@@ -25,15 +25,21 @@ class AppTheme {
 
       ///* Buttons
       filledButtonTheme: FilledButtonThemeData(
-          style: ButtonStyle(
-              textStyle: MaterialStatePropertyAll(
-                  GoogleFonts.montserratAlternates()
-                      .copyWith(fontWeight: FontWeight.w700)))),
+        style: ButtonStyle(
+          textStyle: MaterialStatePropertyAll(
+            GoogleFonts.montserratAlternates()
+                .copyWith(fontWeight: FontWeight.w700),
+          ),
+        ),
+      ),
 
       ///* AppBar
       appBarTheme: AppBarTheme(
         color: scaffoldBackgroundColor,
         titleTextStyle: GoogleFonts.montserratAlternates().copyWith(
-            fontSize: 25, fontWeight: FontWeight.bold, color: Colors.red),
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          color: Colors.red,
+        ),
       ));
 }

@@ -9,7 +9,7 @@ class IAccount {
   final String cel;
   final int cia;
   final int pla;
-  final Estatus estatus;
+  final Estatus? estatus;
   final String userName;
 
   IAccount({

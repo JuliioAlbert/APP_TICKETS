@@ -11,7 +11,21 @@ class AuthMappert {
         cel: json["Cel"],
         cia: json["Cia"],
         pla: json["Pla"],
-        estatus: EstatusMapper.jsonToEntity(json["Estatus"]),
+        estatus: json["Estatus"] != null
+            ? EstatusMapper.jsonToEntity(json["Estatus"])
+            : null,
         userName: json["UserName"],
       );
+
+  static Map<String, dynamic> entityToJson(IAccount entity) => {
+        "Id": entity.id,
+        "Name": entity.name,
+        "Correo": entity.correo,
+        "Rol": entity.rol,
+        "Token": entity.token,
+        "Cel": entity.cel,
+        "Cia": entity.cia,
+        "Pla": entity.pla,
+        "UserName": entity.userName,
+      };
 }

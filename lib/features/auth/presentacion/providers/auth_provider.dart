@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gen_soportes/config/db/db.dart';
 import 'package:gen_soportes/features/auth/domain/domain.dart';
 import 'package:gen_soportes/features/auth/infrastructure/errors/auth_errors.dart';
+import 'package:gen_soportes/features/auth/infrastructure/mappers/auth_mapper.dart';
 
 import '../../infrastructure/repositories/auth_repository_imp.dart';
 
@@ -33,11 +35,15 @@ class AuthNotifier extends StateNotifier<AuthState> {
   void registerUser(String email, String password) async {}
 
   void checkAuthStatus() async {
-    logout();
+    final auth = await AuthDBProvider.getAuth();
+
+    if (auth == null) return logout();
+
+    _setLoggedUser(auth);
   }
 
   void _setLoggedUser(IAccount user) async {
-    // await keyValueStorageService.setKeyValue('token', user.token);
+    await AuthDBProvider.saveAuth(AuthMappert.entityToJson(user));
 
     state = state.copyWith(
       user: user,
@@ -47,13 +53,13 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 
   Future<void> logout([String? errorMessage]) async {
-    // await keyValueStorageService.removeKey('token');
+    await AuthDBProvider.deleteAuth();
 
     state = state.copyWith(
-        // authStatus: AuthStatus.notAuthenticated,
-        authStatus: AuthStatus.authenticated,
-        user: null,
-        errorMessage: errorMessage);
+      authStatus: AuthStatus.notAuthenticated,
+      user: null,
+      errorMessage: errorMessage,
+    );
   }
 }
 
@@ -64,10 +70,11 @@ class AuthState {
   final IAccount? user;
   final String errorMessage;
 
-  AuthState(
-      {this.authStatus = AuthStatus.checking,
-      this.user,
-      this.errorMessage = ''});
+  AuthState({
+    this.authStatus = AuthStatus.checking,
+    this.user,
+    this.errorMessage = '',
+  });
 
   AuthState copyWith({
     AuthStatus? authStatus,
@@ -75,7 +82,8 @@ class AuthState {
     String? errorMessage,
   }) =>
       AuthState(
-          authStatus: authStatus ?? this.authStatus,
-          user: user ?? this.user,
-          errorMessage: errorMessage ?? this.errorMessage);
+        authStatus: authStatus ?? this.authStatus,
+        user: user ?? this.user,
+        errorMessage: errorMessage ?? this.errorMessage,
+      );
 }
