@@ -27,44 +27,48 @@ class TicketsList extends ConsumerWidget {
 
   void openDialogLong(
       BuildContext context, Ticket ticket, WidgetRef ref, Dev? dev) {
-    showModalBottomSheet(
-      context: context,
-      elevation: 10,
-      builder: (context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Wrap(
-          children: [
-            ListTile(
-              leading: const Icon(
-                Icons.cancel,
-                color: Colors.red,
+    if (ticket.idStatus.idEstatus == 1 || ticket.idStatus.idEstatus == 2) {
+      showModalBottomSheet(
+        context: context,
+        elevation: 10,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Wrap(
+            children: [
+              ListTile(
+                leading: const Icon(
+                  Icons.cancel,
+                  color: Colors.red,
+                ),
+                title: const Text(
+                  'Cancelar Ticket',
+                  style: TextStyle(color: Colors.red),
+                ),
+                onTap: () {
+                  cancelarTicket(ticket, ref);
+                  Navigator.pop(context);
+                },
               ),
-              title: const Text(
-                'Cancelar Ticket',
-                style: TextStyle(color: Colors.red),
+              ListTile(
+                leading: const Icon(
+                  Icons.read_more,
+                  color: Colors.blue,
+                ),
+                title: const Text(
+                  'Reasignar',
+                  style: TextStyle(color: Colors.blue),
+                ),
+                onTap: () {
+                  openDialogReasignar(context, ticket, ref, dev);
+                },
               ),
-              onTap: () {
-                cancelarTicket(ticket, ref);
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.read_more,
-                color: Colors.blue,
-              ),
-              title: const Text(
-                'Reasignar',
-                style: TextStyle(color: Colors.blue),
-              ),
-              onTap: () {
-                openDialogReasignar(context, ticket, ref, dev);
-              },
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
+
+      return;
+    }
   }
 
   void cancelarTicket(Ticket ticket, WidgetRef ref) {
@@ -73,6 +77,9 @@ class TicketsList extends ConsumerWidget {
 
   void openDialogReasignar(
       BuildContext context, Ticket ticket, WidgetRef ref, Dev? dev) {
+    Navigator.of(context).pop();
+    ref.read(ticketsProvider.notifier).selectTicket(ticket);
+
     showModalBottomSheet(
       context: context,
       builder: (context) => const ModalReasignar(),
@@ -115,7 +122,7 @@ class TicketsList extends ConsumerWidget {
                           : Colors.grey,
                   leading: const Icon(Icons.bug_report_outlined),
                   title: Text(
-                    ticket.descripcion.trimLeft(),
+                    "${ticket.idTicket}-${ticket.descripcion.trimLeft()}",
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,

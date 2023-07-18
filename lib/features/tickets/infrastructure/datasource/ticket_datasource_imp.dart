@@ -66,4 +66,18 @@ class TicketDataSourceImp extends TicketsDataSource {
 
     return devs;
   }
+
+  @override
+  Future<Ticket> reasignarTicket(int idTicket, int idDev) async {
+    final response = await dio.post("/api/soportes/tickets/reasignar",
+        data: {
+          "idTicket": idTicket,
+          "idDev": idDev,
+        },
+        options: Options(contentType: Headers.jsonContentType));
+
+    final ticketReasignado = TicketMapper.jsonToEntity(response.data);
+
+    return ticketReasignado;
+  }
 }

@@ -8,4 +8,6 @@ abstract class TicketsRepository {
   Future<Ticket> cancelarTicker(int idTicket);
 
   Future<List<Dev>> getDevsAll();
+
+  Future<Ticket> reasignarTicket(int idTicket, int idDev);
 }

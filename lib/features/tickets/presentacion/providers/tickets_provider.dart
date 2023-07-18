@@ -20,11 +20,7 @@ class TicketsNotifier extends StateNotifier<TicketsState> {
     initState();
   }
 
-  initState() async {
-    if (state.isLoading || state.isLastPage) return;
-
-    state = state.copyWith(isLoading: true);
-
+  getTickets() async {
     final auth = await AuthDBProvider.getAuth();
 
     var tickets = await ticketsRepository.getTicketByUsuario(auth!.id);
@@ -37,7 +33,18 @@ class TicketsNotifier extends StateNotifier<TicketsState> {
       ticketsCancelados: [...tickets.where((t) => t.idStatus.idEstatus == 4)],
       ticketsAtendidos: [...tickets.where((t) => t.idStatus.idEstatus == 7)],
     );
-    state = state.copyWith(isLoading: false);
+  }
+
+  Future<List<Dev>> getDevs() async {
+    final devs = await ticketsRepository.getDevsAll();
+
+    state = state.copyWith(devs: devs);
+
+    return devs;
+  }
+
+  initState() async {
+    getTickets();
   }
 
   atender(int idTicket, String solucion) async {
@@ -64,14 +71,24 @@ class TicketsNotifier extends StateNotifier<TicketsState> {
     );
   }
 
-  void getDevs() async {
-    final devs = await ticketsRepository.getDevsAll();
-
-    state = state.copyWith(devs: devs);
+  selectTicket(Ticket ticket) {
+    state = state.copyWith(ticket: ticket, dev: ticket.idDev);
   }
 
-  changeDev(Dev? dev) {
-    state = state.copyWith(dev: dev);
+  changeDev(int? dev) {
+    state = state.copyWith(
+        dev: state.devs.where((element) => element.idUsuario == dev).first);
+  }
+
+  reasignarTicket() async {
+    final ticket = await ticketsRepository.reasignarTicket(
+        state.ticket!.idTicket, state.dev!.idUsuario);
+
+    state = state.copyWith(
+      ticketsPendientes: [
+        ...state.ticketsPendientes.where((t) => t.idTicket != ticket.idTicket)
+      ],
+    );
   }
 }
 
@@ -80,6 +97,7 @@ class TicketsState {
   final List<Ticket> ticketsAtendidos;
   final List<Ticket> ticketsCancelados;
   final List<Dev> devs;
+  final Ticket? ticket;
 
   final Dev? dev;
 
@@ -88,17 +106,17 @@ class TicketsState {
   final int offset;
   final bool isLoading;
 
-  TicketsState({
-    this.ticketsAtendidos = const [],
-    this.ticketsCancelados = const [],
-    this.ticketsPendientes = const [],
-    this.isLastPage = false,
-    this.limit = 10,
-    this.offset = 0,
-    this.isLoading = false,
-    this.dev,
-    this.devs = const [],
-  });
+  TicketsState(
+      {this.ticketsAtendidos = const [],
+      this.ticketsCancelados = const [],
+      this.ticketsPendientes = const [],
+      this.isLastPage = false,
+      this.limit = 10,
+      this.offset = 0,
+      this.isLoading = false,
+      this.dev,
+      this.devs = const [],
+      this.ticket});
 
   TicketsState copyWith({
     List<Ticket>? ticketsPendientes,
@@ -110,6 +128,7 @@ class TicketsState {
     int? offset,
     bool? isLoading,
     Dev? dev,
+    Ticket? ticket,
   }) =>
       TicketsState(
         isLastPage: isLastPage ?? this.isLastPage,
@@ -121,5 +140,6 @@ class TicketsState {
         ticketsPendientes: ticketsPendientes ?? this.ticketsPendientes,
         dev: dev ?? this.dev,
         devs: devs ?? this.devs,
+        ticket: ticket ?? this.ticket,
       );
 }

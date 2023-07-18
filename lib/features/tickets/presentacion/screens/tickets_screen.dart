@@ -33,7 +33,7 @@ class TicketsScreenState extends ConsumerState<TicketsScreen> {
       ),
       drawer: SideMenu(scaffoldKey: scaffoldKey),
       body: RefreshIndicator(
-        onRefresh: () => ref.read(ticketsProvider.notifier).initState(),
+        onRefresh: () => ref.read(ticketsProvider.notifier).getTickets(),
         child: TicketsList(tickets: tickets),
       ),
     );

@@ -24,4 +24,9 @@ class TicketRepositoryImp extends TicketsRepository {
   Future<List<Dev>> getDevsAll() {
     return dataSource.getDevsAll();
   }
+
+  @override
+  Future<Ticket> reasignarTicket(int idTicket, int idDev) {
+    return dataSource.reasignarTicket(idTicket, idDev);
+  }
 }

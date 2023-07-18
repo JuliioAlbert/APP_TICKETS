@@ -15,7 +15,13 @@ class AtendidosScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const HeaderTitle(title: "Atendidos"),
       ),
-      body: TicketsList(tickets: tickets, disable: true),
+      body: RefreshIndicator(
+        onRefresh: () => ref.read(ticketsProvider.notifier).getTickets(),
+        child: TicketsList(
+          tickets: tickets,
+          disable: true,
+        ),
+      ),
     );
   }
 }
