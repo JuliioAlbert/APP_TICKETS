@@ -1,6 +1,9 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gen_soportes/config/db/db.dart';
+import 'package:gen_soportes/config/push_notification.dart';
 import 'package:gen_soportes/features/tickets/domain/domain.dart';
+import 'package:gen_soportes/features/tickets/infrastructure/mappers/TicketResponseMapper.dart';
 import 'package:gen_soportes/features/tickets/presentacion/providers/providers.dart';
 
 final ticketsProvider = StateNotifierProvider<TicketsNotifier, TicketsState>(
@@ -28,10 +31,10 @@ class TicketsNotifier extends StateNotifier<TicketsState> {
     state = state.copyWith(
       ticketsPendientes: [
         ...tickets.where(
-            (t) => t.idStatus.idEstatus == 2 || t.idStatus.idEstatus == 1)
+            (t) => t.idStatus?.idEstatus == 2 || t.idStatus?.idEstatus == 1)
       ],
-      ticketsCancelados: [...tickets.where((t) => t.idStatus.idEstatus == 4)],
-      ticketsAtendidos: [...tickets.where((t) => t.idStatus.idEstatus == 7)],
+      ticketsCancelados: [...tickets.where((t) => t.idStatus?.idEstatus == 4)],
+      ticketsAtendidos: [...tickets.where((t) => t.idStatus?.idEstatus == 7)],
     );
   }
 
@@ -45,6 +48,21 @@ class TicketsNotifier extends StateNotifier<TicketsState> {
 
   initState() async {
     getTickets();
+
+    PushNotificationServices.messagesStream.listen((RemoteMessage event) async {
+      final ticketNotification = TicketMapper.jsonToEntity(event.data);
+
+      final newTicket =
+          await ticketsRepository.getTicketById(ticketNotification.idTicket);
+
+      state = state.copyWith(
+        ticketsPendientes: [
+          ...state.ticketsPendientes
+              .where((t) => t.idTicket != newTicket.idTicket),
+          newTicket
+        ],
+      );
+    });
   }
 
   atender(int idTicket, String solucion) async {

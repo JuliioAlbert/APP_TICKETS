@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gen_soportes/config/db/db.dart';
+import 'package:gen_soportes/config/push_notification.dart';
 import 'package:gen_soportes/features/auth/domain/domain.dart';
 import 'package:gen_soportes/features/auth/infrastructure/errors/auth_errors.dart';
 import 'package:gen_soportes/features/auth/infrastructure/mappers/auth_mapper.dart';
@@ -22,8 +23,10 @@ class AuthNotifier extends StateNotifier<AuthState> {
   Future<void> loginUser(String email, String password) async {
     await Future.delayed(const Duration(milliseconds: 500));
 
+    var token = PushNotificationServices.token ?? "";
+
     try {
-      final user = await authRepository.login(email, password);
+      final user = await authRepository.login(email, password, token);
       _setLoggedUser(user);
     } on CustomError catch (e) {
       logout(e.message);

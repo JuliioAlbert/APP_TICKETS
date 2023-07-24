@@ -27,7 +27,7 @@ class TicketsList extends ConsumerWidget {
 
   void openDialogLong(
       BuildContext context, Ticket ticket, WidgetRef ref, Dev? dev) {
-    if (ticket.idStatus.idEstatus == 1 || ticket.idStatus.idEstatus == 2) {
+    if (ticket.idStatus?.idEstatus == 1 || ticket.idStatus?.idEstatus == 2) {
       showModalBottomSheet(
         context: context,
         elevation: 10,
@@ -114,10 +114,10 @@ class TicketsList extends ConsumerWidget {
                 },
                 key: UniqueKey(),
                 child: ListTile(
-                  iconColor: ticket.idStatus.idEstatus == 4
+                  iconColor: ticket.idStatus?.idEstatus == 4
                       ? Colors.red
-                      : (ticket.idStatus.idEstatus == 1 ||
-                              ticket.idStatus.idEstatus == 2)
+                      : (ticket.idStatus?.idEstatus == 1 ||
+                              ticket.idStatus?.idEstatus == 2)
                           ? Colors.blue
                           : Colors.grey,
                   leading: const Icon(Icons.bug_report_outlined),
@@ -135,7 +135,7 @@ class TicketsList extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        ticket.areas.nombreArea.trimLeft(),
+                        ticket.areas!.nombreArea.trimLeft(),
                         style: const TextStyle(
                           fontSize: 10,
                         ),

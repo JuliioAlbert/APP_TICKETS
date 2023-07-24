@@ -1,0 +1,371 @@
+{
+  "project_info": {
+    "project_number": "916648429815",
+    "firebase_url": "https://bluetoothri505.firebaseio.com",
+    "project_id": "bluetoothri505",
+    "storage_bucket": "bluetoothri505.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:ed6bb70c3258719c5c6bf2",
+        "android_client_info": {
+          "package_name": "com.example.gen_soportes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:d9f20d98dac3d9b35c6bf2",
+        "android_client_info": {
+          "package_name": "com.gen.condominios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-rhh1tqce4p28afc57k35ds8rp73476bp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gen.condominios",
+            "certificate_hash": "c901535c6c96572cf88b22b93228e4c656747224"
+          }
+        },
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:2e88cf9a3f8ec70c",
+        "android_client_info": {
+          "package_name": "com.gen.estaciones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-stcsino3estg7t7blmu29d9bt7ilas96.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gen.estaciones",
+            "certificate_hash": "274689355bf6a3300953c1b4325ae010197a9a60"
+          }
+        },
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:4fcf556389bbe0e5",
+        "android_client_info": {
+          "package_name": "com.gen.fugasgen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-b4opbvhngps7gss5ehe3moug1pas3ues.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gen.fugasgen",
+            "certificate_hash": "274689355bf6a3300953c1b4325ae010197a9a60"
+          }
+        },
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:1a0e4a56e9610eca5c6bf2",
+        "android_client_info": {
+          "package_name": "com.gen.gendroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:7b39b427f56e94b2",
+        "android_client_info": {
+          "package_name": "com.gen.jcoronilla.liquicil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-b39rjqgvg0015tliqgtolgd44eqp6vbl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gen.jcoronilla.liquicil",
+            "certificate_hash": "274689355bf6a3300953c1b4325ae010197a9a60"
+          }
+        },
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:03e49df67b2b16e2",
+        "android_client_info": {
+          "package_name": "com.gen.ojcr.bluetoothri505"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-od0mm19bdqs7igi8r5gmav6f6ps2222r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gen.ojcr.bluetoothri505",
+            "certificate_hash": "274689355bf6a3300953c1b4325ae010197a9a60"
+          }
+        },
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916648429815:android:c7388a46897ec1745c6bf2",
+        "android_client_info": {
+          "package_name": "com.gendroid.fugas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916648429815-s0m7q4l0rrtr8gr012httus1a53j8q16.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gendroid.fugas",
+            "certificate_hash": "2d0746a5a87cf94c3c3f1685123bb9bdaf96d592"
+          }
+        },
+        {
+          "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndAiKMpAyBm8f4HfMVtfSx8iSQhHy0Ck"
+        },
+        {
+          "current_key": "AIzaSyCXuGFKeoCu7Lj4FBTKxnnNURzNsk11kPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916648429815-jg9mgk0d137bv5au1ipg1vq1t9229f5r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916648429815-a3a0baka9v8plg0jps3ltsik5fpvd0rj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fugas"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -80,4 +80,13 @@ class TicketDataSourceImp extends TicketsDataSource {
 
     return ticketReasignado;
   }
+
+  @override
+  Future<Ticket> getTicketById(int idTicket) async {
+    final response = await dio.get("/api/soportes/tickets/ById/$idTicket");
+
+    final ticket = TicketMapper.jsonToEntity(response.data);
+
+    return ticket;
+  }
 }

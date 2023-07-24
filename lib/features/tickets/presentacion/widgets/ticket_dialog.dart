@@ -108,8 +108,8 @@ class AtencionState extends ConsumerState<Atencion> {
             ),
           ),
         const SizedBox(height: 20),
-        if (widget.ticket.idStatus.idEstatus == 2 ||
-            widget.ticket.idStatus.idEstatus == 1)
+        if (widget.ticket.idStatus?.idEstatus == 2 ||
+            widget.ticket.idStatus?.idEstatus == 1)
           Form(
             key: key,
             child: TextFormField(
@@ -129,8 +129,8 @@ class AtencionState extends ConsumerState<Atencion> {
                 }),
           ),
         const SizedBox(height: 30),
-        if (widget.ticket.idStatus.idEstatus == 2 ||
-            widget.ticket.idStatus.idEstatus == 1)
+        if (widget.ticket.idStatus?.idEstatus == 2 ||
+            widget.ticket.idStatus?.idEstatus == 1)
           Container(
             alignment: Alignment.center,
             child: FilledButton.icon(

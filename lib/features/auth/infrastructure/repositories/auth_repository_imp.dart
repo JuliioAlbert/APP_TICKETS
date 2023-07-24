@@ -8,12 +8,7 @@ class AuthRepositoryImp extends AuthRepository {
       : dataSource = dataSource ?? AuthDataSourceImp();
 
   @override
-  Future<IAccount> login(String email, String password) {
-    return dataSource.login(email, password);
-  }
-
-  @override
-  Future<IAccount> register(String email, String password, String fullName) {
-    return dataSource.register(email, password, fullName);
+  Future<IAccount> login(String email, String password, String token) {
+    return dataSource.login(email, password, token);
   }
 }

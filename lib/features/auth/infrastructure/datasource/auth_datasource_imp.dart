@@ -11,10 +11,13 @@ class AuthDataSourceImp extends AuthDataSource {
   ));
 
   @override
-  Future<IAccount> login(String email, String password) async {
+  Future<IAccount> login(String email, String password, String token) async {
     try {
-      final response = await dio.post('/api/soportes/account/login',
-          data: {'account': email, 'password': password});
+      final response = await dio.post('/api/soportes/account/login', data: {
+        'account': email,
+        'password': password,
+        "token": token,
+      });
 
       final account = AuthMappert.jsonToEntity(response.data);
       return account;
@@ -30,12 +33,5 @@ class AuthDataSourceImp extends AuthDataSource {
     } catch (e) {
       throw Exception();
     }
-  }
-
-// TODO FALTA REGISTRO
-  @override
-  Future<IAccount> register(String email, String password, String fullName) {
-    // TODO: implement register
-    throw UnimplementedError();
   }
 }

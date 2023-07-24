@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gen_soportes/config/push_notification.dart';
 import 'package:gen_soportes/config/router/app_route.dart';
 import 'package:gen_soportes/config/theme/theme.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await PushNotificationServices.initializeApp();
+
   await dotenv.load(fileName: ".env");
 
   runApp(
